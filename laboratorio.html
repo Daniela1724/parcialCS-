@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto IKEA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 12px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Formulario de Contacto</h2>
+        <form action="mailto:comercial@ikea.com" method="post" enctype="text/plain">
+            <label for="nombre">Nombre<span class="required">*</span>:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required>
+
+            <label for="email">Email<span class="required">*</span>:</label>
+            <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono (opcional)">
+
+            <label for="asunto">Asunto<span class="required">*</span>:</label>
+            <select id="asunto" name="asunto" required>
+                <option value="">Seleccione una opción</option>
+                <option value="consulta-general">Consulta General</option>
+                <option value="soporte">Soporte Técnico</option>
+                <option value="facturacion">Facturación</option>
+                <option value="sugerencias">Sugerencias</option>
+            </select>
+
+            <label for="mensaje">Mensaje<span class="required">*</span>:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+
+            <label for="autorizacion">Autorizo el uso de mis datos personales<span class="required">*</span>:</label>
+            <input type="checkbox" id="autorizacion" name="autorizacion" required> Estoy de acuerdo
+
+            <input type="submit" value="Enviar Mensaje">
+        </form>
+    </div>
+</body>
+</html>
